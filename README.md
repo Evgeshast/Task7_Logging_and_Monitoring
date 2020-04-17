@@ -33,9 +33,13 @@
 Задание 3. Сбор и анализ логов Используя API или командную строку Log Parser, создайте генератор отчетов по логам. В отчете должно фигурировать:
 filePath = c:\Users\Yauheniya_Strelkova\source\repos\Task\MvcMusicStore\logs\2020-04-14.log
 · Общее количество каждого типа записей
+
 LOGPARSER "SELECT COUNT(Text) FROM filePath WHERE Text LIKE '%DEBUG%'" -i:TEXTLINE -q:Off
+
 LOGPARSER "SELECT COUNT(Text) FROM filePath WHERE Text LIKE '%INFO%'" -i:TEXTLINE -q:Off
+
 LOGPARSER "SELECT COUNT(Text) FROM filePath WHERE Text LIKE '%ERROR%'" -i:TEXTLINE -q:Off
+
 · Перечень ошибок (записей с кодом Error)
 
 LOGPARSER "SELECT Text FROM filePath WHERE Text LIKE '%ERROR%'" -i:TEXTLINE -q:Off
